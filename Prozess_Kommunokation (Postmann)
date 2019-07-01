@@ -1,4 +1,4 @@
-### Prozess_Start
+Prozess_Start
 
  {
  	"messageName" : "TicketEingang",
@@ -9,9 +9,9 @@
  	}
  }
 
-........................................................................................................
 
-#### Ereignis: Fehler_Behoben
+
+Ereignis: Fehler_Behoben
 
  {
  	"messageName" : "FehlerBeheben",
