@@ -1,0 +1,23 @@
+### Prozess_Start
+
+ {
+ 	"messageName" : "TicketEingang",
+ 	"businessKey" : "1",
+ 	"processVariables" : {
+ 		"Release" : {"value" : "Das Transaktionssystem funktioniert nicht", "type" : "String"
+ 		}
+ 	}
+ }
+
+........................................................................................................
+
+#### Ereignis: Fehler_Behoben
+
+ {
+ 	"messageName" : "FehlerBeheben",
+ 	"businessKey" : "1",
+ 	"processVariables" : {
+ 		"Release" : {"value" : "Hiermit möchten wir uns bei Ihnen entschuldigen. Es war ein Misverständnis. Es war kein Fehler", "type" : "String"
+ 		}
+ 	}
+ }
