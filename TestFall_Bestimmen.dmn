@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_05nlkxe" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Testfall" name="TestFall bestimmen">
+    <extensionElements>
+      <biodi:bounds x="491" y="156" width="180" height="80" />
+      <biodi:edge source="BusinessKnowledgeModel_1cfmbyr">
+        <biodi:waypoints x="774" y="260" />
+        <biodi:waypoints x="671" y="211" />
+      </biodi:edge>
+      <biodi:edge source="InputData_101zv14">
+        <biodi:waypoints x="396" y="204" />
+        <biodi:waypoints x="491" y="200" />
+      </biodi:edge>
+      <biodi:edge source="InputData_0ehb3vh">
+        <biodi:waypoints x="501" y="315" />
+        <biodi:waypoints x="554" y="236" />
+      </biodi:edge>
+      <biodi:edge source="InputData_0obil0s">
+        <biodi:waypoints x="653" y="318" />
+        <biodi:waypoints x="605" y="236" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredInput href="#InputData_101zv14" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_0ehb3vh" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_0obil0s" />
+    </informationRequirement>
+    <knowledgeRequirement>
+      <requiredKnowledge href="#BusinessKnowledgeModel_1cfmbyr" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Bugtype">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Bugtype</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_14he8gb">
+          <text>"AA","BB","CC"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_07yeaqm" label="Sprint">
+        <inputExpression id="LiteralExpression_0mxym4p" typeRef="date">
+          <text>Sprint</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_170czug" label="occurrence">
+        <inputExpression id="LiteralExpression_0u1lh60" typeRef="integer">
+          <text>occurrence</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Testtype" name="Testtype" typeRef="string">
+        <outputValues id="UnaryTests_0op1x06">
+          <text>"manual","automatic"</text>
+        </outputValues>
+      </output>
+      <rule id="DecisionRule_12o22vl">
+        <inputEntry id="UnaryTests_1renuwt">
+          <text>"AA"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j4wlqn">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06lze4e">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17nja7c">
+          <text>"automatic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0r97ujt">
+        <inputEntry id="UnaryTests_05pfmg2">
+          <text>"BB"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0j9emr5">
+          <text>&gt; date and time("2019-06-28T00:00:00")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1hhwaql">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pqubaw">
+          <text>"manual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0h4hf0a">
+        <inputEntry id="UnaryTests_0cxau38">
+          <text>"BB"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05r60nc">
+          <text>&lt; date and time("2019-06-28T00:00:00")</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xw5l2p">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j9knmf">
+          <text>"automatic"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_08iqn5g">
+        <inputEntry id="UnaryTests_13yk8qz">
+          <text>"CC"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1mo1iw1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1tmuutj">
+          <text>[1..10[</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0app4e2">
+          <text>"manual"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1p98tv9">
+        <inputEntry id="UnaryTests_1tnffcw">
+          <text>"CC"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0szi4qe">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_17mk5xk">
+          <text>&gt;= 10</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1w828zv">
+          <text>"automatic"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_00q643j" name="QA-Richtlinien">
+    <extensionElements>
+      <biodi:bounds x="745" y="136" width="100" height="63" />
+      <biodi:edge source="Testfall">
+        <biodi:waypoints x="671" y="184" />
+        <biodi:waypoints x="745" y="175" />
+      </biodi:edge>
+    </extensionElements>
+    <authorityRequirement>
+      <requiredDecision href="#Testfall" />
+    </authorityRequirement>
+  </knowledgeSource>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_1cfmbyr" name="QA-Leiter">
+    <extensionElements>
+      <biodi:bounds x="755" y="260" width="135" height="46" />
+      <biodi:edge source="KnowledgeSource_00q643j">
+        <biodi:waypoints x="803" y="199" />
+        <biodi:waypoints x="817" y="260" />
+      </biodi:edge>
+    </extensionElements>
+    <authorityRequirement>
+      <requiredAuthority href="#KnowledgeSource_00q643j" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <inputData id="InputData_101zv14" name="occurrence">
+    <extensionElements>
+      <biodi:bounds x="271" y="184" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_0ehb3vh" name="Sprint">
+    <extensionElements>
+      <biodi:bounds x="422" y="315" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_0obil0s" name="Bugtype">
+    <extensionElements>
+      <biodi:bounds x="604" y="318" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+</definitions>
