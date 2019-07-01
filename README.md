@@ -3,6 +3,7 @@
 Die Idee, einen Prozess über Releasemanagement zu machen, kam mir einfach als Bestandteil meiner Arbeit und vor allem, weil es notwendig war, einen Prozess zu modellieren und implementieren, der allen Anweisungen entsprach, die im Rahmen der Durchführung dieses Projekts erteilt wurden.
 
 ## Prozessabgrezung
+ 
 
 ## Prozessbeschreibung
 Nach dem Kauf einer Software kommt es sehr oft vor, dass ein Kunde der SAW-AG auf ein Problem stößt, das technisch oder funktional sein kann. Unabhängig davon, ob es sich um das eine oder andere handelt, sendet der Kunde seinen Wunsch durch Ausfüllen eines elektronischen Ticketmanagementsystems. Dieses Ticket geht beim Kundendienst ein, der den Inhalt des Tickets überprüft. Es kann vorkommen, dass der Kunde bei dieser Überprüfung eine E-Mail mit dem Vorbehalt der Stornierung seines Tickets sendet.
