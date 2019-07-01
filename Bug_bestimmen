@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_1oz262n" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="bugs" name="Bug bestimmen">
+    <extensionElements>
+      <biodi:bounds x="387" y="146" width="180" height="80" />
+      <biodi:edge source="BusinessKnowledgeModel_0pjhnfa">
+        <biodi:waypoints x="645" y="263" />
+        <biodi:waypoints x="567" y="204" />
+      </biodi:edge>
+      <biodi:edge source="InputData_0gdh8gu">
+        <biodi:waypoints x="428" y="309" />
+        <biodi:waypoints x="461" y="226" />
+      </biodi:edge>
+      <biodi:edge source="InputData_0m0yqm1">
+        <biodi:waypoints x="318" y="188" />
+        <biodi:waypoints x="387" y="187" />
+      </biodi:edge>
+    </extensionElements>
+    <informationRequirement>
+      <requiredInput href="#InputData_0gdh8gu" />
+    </informationRequirement>
+    <informationRequirement>
+      <requiredInput href="#InputData_0m0yqm1" />
+    </informationRequirement>
+    <knowledgeRequirement>
+      <requiredKnowledge href="#BusinessKnowledgeModel_0pjhnfa" />
+    </knowledgeRequirement>
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Kundenstatus">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>Kundenstatus</text>
+        </inputExpression>
+        <inputValues id="UnaryTests_11gj9ge">
+          <text>"gold","silver","bronze"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0fuzp20" label="ReleaseVersion">
+        <inputExpression id="LiteralExpression_0htupgf" typeRef="integer">
+          <text>ReleaseVersion</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Priority" name="Priority" typeRef="integer" />
+      <rule id="DecisionRule_0ca3k7r">
+        <inputEntry id="UnaryTests_0v0ere0">
+          <text>"gold"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_06v5j94">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1be2l2e">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0aytpxo">
+        <inputEntry id="UnaryTests_0qk2c2k">
+          <text>"silver"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1idsiro">
+          <text>&lt; 11</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1sinbwt">
+          <text>2</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_03veeh2">
+        <inputEntry id="UnaryTests_1tsxao2">
+          <text>"silver"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g0x34i">
+          <text>&gt;= 11</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1toqz46">
+          <text>1</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ygrmyu">
+        <inputEntry id="UnaryTests_143o1ar">
+          <text>"bronze"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1aogwmu">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iwou8v">
+          <text>3</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_1ku6ghg" name="Bugfixrichtlinien">
+    <extensionElements>
+      <biodi:bounds x="634" y="122" width="100" height="63" />
+      <biodi:edge source="bugs">
+        <biodi:waypoints x="567" y="178" />
+        <biodi:waypoints x="634" y="158" />
+      </biodi:edge>
+    </extensionElements>
+    <authorityRequirement>
+      <requiredDecision href="#bugs" />
+    </authorityRequirement>
+  </knowledgeSource>
+  <businessKnowledgeModel id="BusinessKnowledgeModel_0pjhnfa" name="Dev-Leiter">
+    <extensionElements>
+      <biodi:bounds x="645" y="239" width="135" height="46" />
+      <biodi:edge source="KnowledgeSource_1ku6ghg">
+        <biodi:waypoints x="699" y="185" />
+        <biodi:waypoints x="702" y="239" />
+      </biodi:edge>
+    </extensionElements>
+    <authorityRequirement>
+      <requiredAuthority href="#KnowledgeSource_1ku6ghg" />
+    </authorityRequirement>
+  </businessKnowledgeModel>
+  <inputData id="InputData_0gdh8gu" name="Kundenstatus">
+    <extensionElements>
+      <biodi:bounds x="356" y="309" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+  <inputData id="InputData_0m0yqm1" name="ReleaseVersion">
+    <extensionElements>
+      <biodi:bounds x="193" y="166" width="125" height="45" />
+    </extensionElements>
+  </inputData>
+</definitions>
