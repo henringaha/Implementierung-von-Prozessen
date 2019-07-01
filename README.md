@@ -26,6 +26,9 @@ Die Modellierung wurde mit Camunda-Modeler und Camunda-DMN durchgeführt. Um die
 Die folgenden Abbildungen stellen die modellierten Prozesse dar:
 
 ### Hauptprozess: ReleaseManagement.bpmn
+![image](https://user-images.githubusercontent.com/50373209/60469104-e043af80-9c5b-11e9-88e3-ac5cd6a2bc84.png)
+
 ### Bug_Bestimmen.dmn
+
 ### Sub-Prozess: Test_Durchführen.bpmn
 ### TestFall_Bestimmen.dmn
