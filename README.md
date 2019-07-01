@@ -34,4 +34,6 @@ Die folgenden Abbildungen stellen die modellierten Prozesse dar:
 ![Unbenannt](https://user-images.githubusercontent.com/50373209/60469536-4ed53d00-9c5d-11e9-8308-72d51ae219cf.PNG)
 
 ### Sub-Prozess: Test_Durchführen.bpmn
+![image](https://user-images.githubusercontent.com/50373209/60469622-aecbe380-9c5d-11e9-8b17-46607a2be964.png)
+
 ### TestFall_Bestimmen.dmn
