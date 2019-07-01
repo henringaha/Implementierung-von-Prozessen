@@ -38,3 +38,5 @@ Die folgenden Abbildungen stellen die modellierten Prozesse dar:
 
 ### TestFall_Bestimmen.dmn
 ![TestFall bestimmen](https://user-images.githubusercontent.com/50373209/60469745-26017780-9c5e-11e9-8d89-481e4715c942.png)
+
+![Unbenannt](https://user-images.githubusercontent.com/50373209/60469865-7e387980-9c5e-11e9-94dd-0ff3cfd02180.PNG)
