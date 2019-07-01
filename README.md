@@ -22,6 +22,9 @@ Danach wird der Test-Round durchgeführt. Nachdem der Test-Round abgeschlossen i
 
 ## BPMN- / DMN-Modellierung
 
+Die Modellierung wurde mit Camunda-Modeler und Camunda-DMN durchgeführt. Um die Prozess-Kommunikation zwischen das Unternehmen SAW-AG zu implementieren, wurde diese Kommunikation anhand Postman durchgeführt. Für die Automatisierung des Prozesses wird Camunda-Engine angewendet.
+Die folgenden Abbildungen stellen die modellierten Prozesse dar:
+
 ### Hauptprozess: ReleaseManagement.bpmn
 ### Bug_Bestimmen.dmn
 ### Sub-Prozess: Test_Durchführen.bpmn
