@@ -29,6 +29,8 @@ Die folgenden Abbildungen stellen die modellierten Prozesse dar:
 ![image](https://user-images.githubusercontent.com/50373209/60469104-e043af80-9c5b-11e9-88e3-ac5cd6a2bc84.png)
 
 ### Bug_Bestimmen.dmn
+![Bug_Bestimmen](https://user-images.githubusercontent.com/50373209/60469335-927b7700-9c5c-11e9-86af-bdc998178b2e.png)
+
 
 ### Sub-Prozess: Test_Durchführen.bpmn
 ### TestFall_Bestimmen.dmn
